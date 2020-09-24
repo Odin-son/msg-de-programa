@@ -16,14 +16,31 @@
 
 ## Requirements
 * twitter account
-* registered developer [@how_to_apply](blog.naver.com/mdsd12) (not yet)
+    * registered developer [@how_to_apply](https://blog.naver.com/mdsd12) (not yet)
 * library
     * tweepy
+    * os
+    * json
 
 ## Getting Started
+* in case of using virtualenv,
+```bash
+cd path/to/project
+virtualenv [env_name] --python=python3.7
+source [en_name]/bin/activate
+```
+* in case of using anaconda,
+```bash
+cd path/to/project
+conda create -n [env_name] python=3.7
+conda activate [env_name]
+```
+* install required library(CLI)
 ```
 $ pip install tweepy
 ```
+## How to use
+
 
 ## 📝 License
 
