@@ -6,6 +6,8 @@
 </p>
 
 > message from program
+>
+> ![message-demo](demo/demo.gif)
 
 ## Author
 
@@ -18,29 +20,40 @@
 * twitter account
     * registered developer [@how_to_apply](https://blog.naver.com/mdsd12) (not yet)
 * library
-    * tweepy
+    * tweepy==3.9.0
     * os
     * json
 
 ## Getting Started
 * in case of using virtualenv,
 ```bash
-cd path/to/project
-virtualenv [env_name] --python=python3.7
-source [en_name]/bin/activate
+$ virtualenv [env_name] --python=python3.7
+$ source [en_name]/bin/activate
 ```
 * in case of using anaconda,
 ```bash
-cd path/to/project
-conda create -n [env_name] python=3.7
-conda activate [env_name]
+$ conda create -n [env_name] python=3.7
+$ conda activate [env_name]
 ```
 * install required library(CLI)
 ```
-$ pip install tweepy
+$ bash ./lib_install.sh 
 ```
-## How to use
 
+## How to use
+* in your code, just call `msg()` function
+```
+# load package, 'msg-de-programa'
+from mensaje.operate import *
+...
+# for example, when the loop statement is done
+msg('[TEST-01, LOOP] finally done!')
+...
+```
+![message-demo](demo/demo.gif)
+
+## Troubleshooting
+* just in case of bad auth, re-check your dev-api reference (ex)
 
 ## 📝 License
 
