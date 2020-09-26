@@ -5,7 +5,7 @@ import json
 list_content = ['api key', 'api key secret', 'token', 'token secret']
 file_path = './config.json'
 
-def init():
+def create_file():
     data = {'info': []}
     data['info'].append({
         "api key" : "",
@@ -14,11 +14,10 @@ def init():
         "token secret" : ""
     })
     with open(file_path, 'w') as out:
-       json.dump(data, out, indent=4)
+        json.dump(data, out, indent=4)
 
-def set(json_data):
+def write_info(json_data):
     for content in list_content:
-        #print(content, ' : ')
         tmp = input('{}{}'.format(content, ' : '))
         json_data['info'][0][content] = tmp
 
@@ -30,25 +29,26 @@ def validate(json_data):
 def msg(str):
     # as if file does not exist
     if not os.path.isfile(file_path):
-        init()
+        create_file()
 
+    # as if empty
     with open(file_path, 'r') as json_file:
         json_data = json.load(json_file)
 
     if not validate(json_data):
-        set(json_data)
+        write_info(json_data)
 
-    # if auth
-    with open(file_path, 'w') as out:
-       json.dump(json_data, out, indent=4)
-
-    # ready for input
+        with open(file_path, 'w') as out:
+            json.dump(json_data, out, indent=4)
 
     # read config
-    api_key_ = ''
-    api_key_secret_ = ''
-    token_ = ''
-    token_secret_ = ''
+    with open(file_path, 'r') as json_file:
+        json_data = json.load(json_file)
+
+    api_key_ = json_data['info'][0][list_content[0]]
+    api_key_secret_ = json_data['info'][0][list_content[1]]
+    token_ = json_data['info'][0][list_content[2]]
+    token_secret_ = json_data['info'][0][list_content[3]]
 
     # set tweepy(twitter api)
     auth = tweepy.OAuthHandler(api_key_, api_key_secret_)
