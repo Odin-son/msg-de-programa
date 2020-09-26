@@ -1,16 +1,3 @@
-'''
-from setuptools import setup, find_packages
-
-setup(name='mensaje',
-      version='0.1',
-      url='https://github.com/Odin-son/msg-de-programa',
-      license='MIT',
-      author='Changwoo song',
-      author_email='cornwall@kakao.com',
-      description='get message from program',
-      long_description=open('README.md').read(),
-      setup_requires=['tweepy'])
-'''
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -31,6 +18,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    setup_requires=['tweepy'],
     python_requires='>=3.7',
 )
