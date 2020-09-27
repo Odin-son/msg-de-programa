@@ -18,7 +18,7 @@
 
 ## Requirements
 * twitter account
-    * registered developer [@how_to_apply](https://blog.naver.com/mdsd12) (not yet)
+    * registered developer [@how_to_register](https://blog.naver.com/mdsd12/222100803033) 
 * library
     * tweepy==3.9.0
     * os
